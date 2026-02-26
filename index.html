@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="sv">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,24 +8,92 @@
   <body>
 
     <header>
+      <picture>
+        <source srcset="terraria-logo.webp" type="image/webp">
+        <img src="/terraria-logo.png" alt="terraria logga">
+      </picture>
+
       <h1>Terraria Guide</h1>
 
       <nav>
         <ul>
           <li><a href="#">Start</a></li>
-          <li><a href="#">Bossar</a></li>
-          <li><a href="#">Biomes</a></li>
-          <li><a href="#">Items</a></li>
-          <li><a href="sass.html">SASS</a></li>
+          <li><a href="#bossar">Bossar</a></li>
+          <li><a href="#biomes">Biomes</a></li>
+          <li><a href="#items">Items</a></li>
+          <li><a href="/sass.html">SASS</a></li>
         </ul>
       </nav>
     </header>
 
     <main>
       <h2>Välkommen</h2>
-      <p>En guide till spelet Terraria</p>
+      <p>Terraria är ett spel där man bygger, utforkar och slåss mot olika bossar. </p>
 
+      <picture>
+        <source srcset="terraria-gameplay.webp" type="image/webp">
+        <img src="/terraria-gameplay.jpg" alt="terraria värld">
+      </picture>
+      
+      <section id="bossar">
+        <h2>Några olika bossar</h2>
+
+        <article>
+          <h3>Eye of Cthulhu</h3>
+          <p>Ofta den första riktiga bossen och är en perfekt startutmaning.</p>
+        </article>
+        
+        <article>
+          <h3>Skeletron</h3>
+          <p>Skyddar spelets dungeon och kräven ganska bra utrustning.</p>
+        </article>
+
+        <article>
+          <h3>Wall of flesh</h3>
+          <p>Låser upp hardmode och förändrar hela världen med nya monster, biomes och material</p>
+        </article>
+      </section>
+
+      <picture>
+        <source srcset="terraria-player.webp" type="image/webp">
+        <img src="/terraria-player.jpg" alt="terraria avatar">
+      </picture>
+
+      <section id="biomes">
+        <h2>Biomes</h2>
+        <ul>
+          <li>Forest</li>
+          <li>desert</li>
+          <li>Jungle</li>
+          <li>Corruption/Crimson</li>
+          <li>Snow</li>
+          <li>Hallow</li>
+        </ul>
+      </section>
+
+      <section id="items"> 
+        <h2>Några olika items</h2>
+
+        <article>
+          <h3>Night's Edge</h3>
+          <p>Ett starkt svärd som går att få innan hardmode</p>
+        </article>
+
+        <article>
+          <h3>Magic Mirror</h3>
+          <p>Teleporterar spelaren tillbaka till spawn</p>
+        </article>
+
+        <article>
+          <h3>Zenith</h3>
+          <p>Det starkaste svärdet i hela spelet och går bara att få när man klarat den sista bossen</p>
+        </article>
+      </section>
     </main>
+
+    <footer>
+      <p>Skapad av: Tyra Wikander, E-post: tywi2501@student.miun.se</p>
+    </footer>
     <script type="module" src="/src/js/main.js"></script>
   </body>
 </html>
