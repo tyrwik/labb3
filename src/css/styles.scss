@@ -1,0 +1,13 @@
+@use 'variables';
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: variables.$light-bg;
+    color: variables.$text-dark;
+}
+
+header {
+    padding: 1em;
+    background: variables.$primary;
+}
