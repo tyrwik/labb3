@@ -4,21 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Terraria Guide</title>
-    <link rel="stylesheet" href="css/styles.scss">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   </head>
   <body>
 
-    <header>
-      <picture>
-        <source srcset="terraria-logo.webp" type="image/webp">
-        <img src="/terraria-logo.png" alt="terraria logga">
-      </picture>
-
-      <h1>Terraria Guide</h1>
+    <header>  
+        <picture class="logo">
+          <source srcset="terraria-logo.webp" type="image/webp">
+          <img src="/terraria-logo.png" alt="terraria logga">
+        </picture>
 
       <nav>
         <ul>
-          <li><a href="#">Start</a></li>
+          <li><a href="/index.html">Start</a></li>
           <li><a href="#bossar">Bossar</a></li>
           <li><a href="#biomes">Biomes</a></li>
           <li><a href="#items">Items</a></li>
@@ -29,36 +29,66 @@
 
     <main>
       <h2>Välkommen</h2>
-      <p>Terraria är ett spel där man bygger, utforkar och slåss mot olika bossar. </p>
 
-      <picture>
-        <source srcset="terraria-gameplay.webp" type="image/webp">
-        <img src="/terraria-gameplay.jpg" alt="terraria värld">
-      </picture>
+      <section id="introduction">
+        <picture class="gameplay">
+          <source srcset="terraria-gameplay.webp" type="image/webp">
+          <img src="/terraria-gameplay.jpg" alt="terraria värld">
+        </picture>
+
+        <p>
+          Terraria är ett populärt sandbox-äventyrsspel utvecklat av Re-Logic. Spelet släpptes första gången 
+          2011 och utspelar sig i en stor, slumpmässigt genererad 2D-värld fylld med olika biomer, fiender och 
+          hemligheter. <br><br>
+      
+          I Terraria får spelaren utforska världen, samla resurser, bygga byggnader och skapa nya 
+          föremål genom crafting. Under spelets gång kan man hitta bättre utrustning, möta olika 
+          NPC-karaktärer och bekämpa många unika bossar. Bossarna blir gradvis svårare och kräver 
+          att spelaren förbereder sig genom att skaffa bättre vapen, rustningar och tillbehör.<br><br>
+        
+          spelet är känt för sin stora frihet. Spelaren kan själv välja om man vill fokusera på 
+          byggande, utforskning eller strider. Världen innehåller många olika miljöer, som djungler, 
+          öknar, snöområden och farliga grottsystem under marken.<br><br>
+        
+          Terraria kan spelas både ensam och tillsammans med andra i multiplayer, vilket gör att 
+          spelare kan samarbeta för att bygga stora baser och besegra svåra bossar. 
+          Tack vare kontinuerliga uppdateringar har spelet fått mycket nytt innehåll genom åren 
+          och har blivit ett av de mest älskade indie-spelen.
+        </p>
+      </section>
+
+      <h2>Några olika bossar</h2>
       
       <section id="bossar">
-        <h2>Några olika bossar</h2>
-
         <article>
-          <h3>Eye of Cthulhu</h3>
-          <p>Ofta den första riktiga bossen och är en perfekt startutmaning.</p>
+          <div class="boss-text">
+            <h3>Eye of Cthulhu</h3>
+            <p>Ofta den första riktiga bossen och är en perfekt startutmaning.</p>
+          </div>
+          <img class="boss-pic" src="public/eye.gif">
         </article>
         
         <article>
-          <h3>Skeletron</h3>
-          <p>Skyddar spelets dungeon och kräven ganska bra utrustning.</p>
+          <div class="boss-text">
+            <h3>Skeletron</h3>
+            <p>Skyddar spelets dungeon och kräven ganska bra utrustning.</p>
+          </div>
+          <img class="boss-pic" src="public/skeletron.png">
         </article>
 
         <article>
-          <h3>Wall of flesh</h3>
-          <p>Låser upp hardmode och förändrar hela världen med nya monster, biomes och material</p>
+          <div class="boss-text">
+            <h3>Wall of flesh</h3>
+            <p>Låser upp hardmode och förändrar hela världen med nya monster, biomes och material</p>
+          </div>
+          <img class="boss-pic" src="public/wall_of_flesh.gif">
         </article>
-      </section>
 
-      <picture>
-        <source srcset="terraria-player.webp" type="image/webp">
-        <img src="/terraria-player.jpg" alt="terraria avatar">
-      </picture>
+        <picture class="player">
+          <source srcset="terraria-player.webp" type="image/webp">
+          <img src="/terraria-player.jpg" alt="terraria avatar">
+        </picture>
+      </section>
 
       <section id="biomes">
         <h2>Biomes</h2>
@@ -76,19 +106,29 @@
       <section id="items"> 
         <h2>Några olika items</h2>
 
-        <article>
-          <h3>Night's Edge</h3>
-          <p>Ett starkt svärd som går att få innan hardmode</p>
+        <article class="item-box">
+          <div class="boss-text">
+            <h3>Magic Mirror</h3>
+            <p>Teleporterar spelaren tillbaka till spawn</p>
+          </div>
+          <img class="boss-pic" src="public/magic_mirror.webp">
         </article>
 
-        <article>
-          <h3>Magic Mirror</h3>
-          <p>Teleporterar spelaren tillbaka till spawn</p>
+        <article class="item-box">
+          <div class="boss-text">
+            <h3>Night's Edge</h3>
+            <p>Ett starkt svärd som går att få innan hardmode</p>
+          </div>
+          <img class="boss-pic" src="public/nights_edge.webp">
         </article>
 
-        <article>
-          <h3>Zenith</h3>
-          <p>Det starkaste svärdet i hela spelet och går bara att få när man klarat den sista bossen</p>
+
+        <article class="item-box">
+          <div class="boss-text">
+            <h3>Zenith</h3>
+            <p>Det starkaste svärdet i hela spelet och går bara att få när man klarat den sista bossen</p>
+          </div>
+          <img class="boss-pic" src="public/zenith.webp">
         </article>
       </section>
     </main>
