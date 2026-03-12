@@ -52,7 +52,6 @@ main {
 nav {
     ul {
         display: flex;
-        gap: 20px;
         list-style: none;
         padding: 0;
         margin-top: 3.5em;
@@ -62,11 +61,11 @@ nav {
     a {
         color: white;
         text-decoration: none;
-        font-size: 1.5em;
+        font-size: 1.2em;
         font-family: "Press Start 2P", system-ui;
         font-weight: 400;
         font-style: normal;
-
+        
         &:hover {
             background: darken(base.$primary, 15%);
             padding: 6px 10px;
