@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karta</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/index.html">Startsida</a></li>
+                <li><a href="/sass.html">SASS</a></li>
+                <li><a href="/animation.html">Animering</a></li>
+                <li><a href="/diagram.html">Diagram</a></li>
+                <li><a href="/map.html">Karta</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <h1>Sök plats</h1>
+
+        <input type="text" id="searchInput" placeholder="Sök plats...">
+        <button id="searchPlace">Sök</button>
+
+        <div id="map"></div>
+
+    </main>
+    <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>
