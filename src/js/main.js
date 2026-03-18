@@ -12,7 +12,7 @@ if(button) {
 /**
  * hämtar antagningsdata från JSON-fil
  * @async
- * @returns
+ * @returns {Promise<Array>} Lista med antagningsdata
  */
 
 async function fetchData() {
@@ -23,7 +23,7 @@ async function fetchData() {
 
 /**
  * Stapeldiagram för kurser
- * @param {Array} courses
+ * @param {Array} courses Lista med kurser
  */
 
 function courseChart (courses){
@@ -46,7 +46,7 @@ function courseChart (courses){
 
 /**
  * Cirkeldiagram för program.
- * @param {Array} programs
+ * @param {Array} programs lista med program
  */
 
 function programChart (programs) {
@@ -65,7 +65,8 @@ function programChart (programs) {
 }
 
 /**
- * startar diagrammen
+ * startar diagrammen genom att hämta data och skickar till diagramfunktionerna
+ * @async
  */
 
 async function startCharts() {
@@ -73,9 +74,9 @@ async function startCharts() {
     
     courseChart(
         data
-        .filter(item => item.type === "kurs")
+        .filter(item => item.type === "Kurs")
         .sort((a,b) => b.applicantsTotal - a.applicantsTotal)
-        .slice(0.6)
+        .slice(0, 6)
     );
 
     programChart (
@@ -87,4 +88,74 @@ async function startCharts() {
 }
 
 startCharts()
+
+const mapElement = document.querySelector("#map");
+const searchButton = document.querySelector("#searchPlace");
+const searchInput = document.querySelector("#searchInput");
+
+let map;
+let marker;
+
+if(mapElement) {
+    map = L.map('map').setView([59.3293, 18.0686], 13);
+
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+
+    marker = L.marker([59.3293, 18.0686]).addTo(map);
+}
+
+/**
+ * Söker efter en plats genom Nominatim API och flyttar kartan till vald plats
+ * @async
+ */
+
+async function searchPlace() {
+    if (!searchInput || !map || !marker) return;
+    const query = searchInput.value.trim();
+
+    if (!query) return;
+    try{
+        const response = await fetch(
+            `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(query)}`
+        )
+        const data = await response.json();
+
+        if (data.length === 0) {
+            alert("platsen kunde inte hittas.");
+            return;
+        }
+
+        const lat = Number(data[0].lat);
+        const lon = Number(data[0].lon);
+        const name = data[0].display_name;
+
+        map.setView([lat, lon], 13);
+          marker.setLatLng([lat, lon])
+            .bindPopup(name)
+            .openPopup();
+        
+
+    } catch (error) {
+        console.error("Fel vid sökning av plats", error);
+    }
+}
+
+if (searchButton) {
+    searchButton.addEventListener("click", searchPlace);
+}
+
+if (searchInput) {
+    searchInput.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
+            searchPlace();
+        }
+    })
+}
+
+
+
+
 

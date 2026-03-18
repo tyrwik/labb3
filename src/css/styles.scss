@@ -244,6 +244,16 @@ footer {
     .logo img  {
         max-width: 13em;
     }
+
+    .diagram-main {
+        h1 {
+            font-size: 1.5em;
+        }
+
+        h2 {
+            font-size: 1.2em;
+        }
+    }
 }
 
 /* Diagram */
@@ -256,3 +266,41 @@ canvas {
     max-width: 80%;
     height: auto;
 }
+
+.diagram-main {
+    h1, h2 {
+        text-align: center;
+    }
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+/* Karta */
+
+.map-main {
+    h1 {
+        text-align: center;
+    }
+    .search {
+        display: flex;
+        justify-content: center;
+        gap: 1em;
+        margin: 1em 0;
+    }
+    #searchInput {
+        padding: 0.5em;
+        border-radius: 10px;
+    }
+
+    #searchPlace {
+        padding: 0.5em;
+        border-radius: 10px;
+    }
+}
+
+#map {
+    margin: 0 auto;
+    height: 60em;
+    width: 80%;
+}
+
