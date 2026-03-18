@@ -245,3 +245,14 @@ footer {
         max-width: 13em;
     }
 }
+
+/* Diagram */
+
+canvas {
+    background: white;
+    padding: 1.5em;
+    border-radius: 10px;
+    margin: 2em auto;
+    max-width: 80%;
+    height: auto;
+}
